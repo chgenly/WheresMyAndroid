@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+	<CheckBoxPreference android:title="Enabled"
+		android:key="enabled" android:summaryOff="SMS messages will not be checked."
+		android:summaryOn="Incoming SMS messages containing the keyword will be replied to with latitude and longitude."
+		android:shouldDisableView="true"></CheckBoxPreference>
+	<EditTextPreference android:key="keyword"
+		android:title="Keyword" android:dependency="enabled"
+		android:summary="SMS messages will be searched for this keyword.  Case insensitive."></EditTextPreference>
+
+</PreferenceScreen>
