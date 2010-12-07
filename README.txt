@@ -39,9 +39,13 @@ be able to look it up if you lose your phone.
 Send an SMS message from email
 
   How do you send an SMS message if you've lost your phone?  Use your mobile
-  provider's email to SMS gateway.  For T-mobile this is:
+  provider's email to SMS gateway. 
 
-    phone_number_with_area_code_no_spaces@tmomail.net
+    T-mobile  phone_number_with_area_code_no_spaces@tmomail.net
+    Verizon   number@vtext.com
+
+  For others see:
+    http://en.wikipedia.org/wiki/List_of_SMS_gateways
 
   SMS gateways can mess with the formatting of a message.  This is why
   the keyword is allowed to appear anywhere in the message.  This lets
