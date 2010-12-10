@@ -1,19 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-	android:versionCode="1" android:versionName="1.0" package="us.genly.wheresmyandroid">
+<manifest android:versionCode="1" android:versionName="1.0"
+	package="us.genly.wheresmyandroid" xmlns:android="http://schemas.android.com/apk/res/android">
 	<application android:icon="@drawable/icon" android:label="@string/app_name"
 		android:debuggable="true">
 		<activity android:name=".WheresMyAndroidPreferenceActivity">
-		<intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+			<intent-filter>
+				<action android:name="android.intent.action.MAIN" />
+				<category android:name="android.intent.category.LAUNCHER" />
+			</intent-filter>
 		</activity>
 		<receiver android:exported="true" android:name=".SmsReceiver">
 			<intent-filter>
-			 <action android:name="android.provider.Telephony.SMS_RECEIVED"></action>
+				<action android:name="android.provider.Telephony.SMS_RECEIVED"></action>
 			</intent-filter>
 		</receiver>
+		<activity android:name=".Ring">
+			<intent-filter>
+				<action android:name="us.genly.wheresmyandroid.RING"></action>
+			</intent-filter>
+		</activity>
 	</application>
 	<uses-permission android:name="android.permission.SEND_SMS"></uses-permission>
 	<uses-permission android:name="android.permission.RECEIVE_SMS"></uses-permission>

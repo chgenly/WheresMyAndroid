@@ -23,6 +23,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.StringTokenizer;
 
+import us.genly.wheresmyandroid.cmds.ReplyWithLocationCmd;
+import us.genly.wheresmyandroid.cmds.RingCmd;
+
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -38,7 +41,7 @@ public class SmsReceiver extends BroadcastReceiver {
 		initCmds();
 	}
 	static private void initCmds() {
-		for(Cmd cmd : new Cmd[] {new Ring(), new ReplyWithLocation()}) {
+		for(Cmd cmd : new Cmd[] {new RingCmd(), new ReplyWithLocationCmd()}) {
 			cmds.put(cmd.getCmdName(),cmd);
 		}
 	}
@@ -47,7 +50,7 @@ public class SmsReceiver extends BroadcastReceiver {
 	public void onReceive(Context context, Intent intent) {
 		SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
 		keyword = prefs.getString("keyword", "").toLowerCase();
-		if (keyword.equals("") || !prefs.getBoolean("enabled", false))
+		if (keyword.equals("") || !prefs.getBoolean("enabled", true))
 			return;
 
 		List<SmsMessage> smsMessages = getSmsMessages(intent);

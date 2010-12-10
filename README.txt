@@ -1,6 +1,6 @@
 WheresMyAndroid
 
-12/3/2010
+12/9/2010
 
 Find your phone when you lose it.  Use an SMS message to reply
 with the GPS location of the phone, or ring the phone loudly.
@@ -16,6 +16,10 @@ After installing this application, run it to configure it.  Make
 sure to test your configuration by sending yourself a message
 with the keyword.  If you incorrectly configure the keyword, you won't
 be able to look it up if you lose your phone.
+
+Once installed the app will default to enabled with a keyword of
+"zontar".  It is recommended you change the default keyword so
+your friends can't ring your phone as a prank.
 
 <keyword> location
 
@@ -35,6 +39,12 @@ be able to look it up if you lose your phone.
   Takes the phone out of vibrate or silent mode, turns the ringer
   volume to its loudest, and rings the phone.  Use this command if you
   know you've left the phone in the house, but you just can't find it.
+  You could just call your phone, but this is better if you've left
+  it in silent or vibrate mode.
+  
+  When the phone starts ringing a view will be presented with a
+  button that allows you to stop the ringing.
+  
 
 Send an SMS message from email
 

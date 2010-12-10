@@ -1,5 +1,6 @@
-package us.genly.wheresmyandroid;
+package us.genly.wheresmyandroid.cmds;
 
+import us.genly.wheresmyandroid.Cmd;
 import android.content.Context;
 import android.location.Location;
 import android.location.LocationListener;
@@ -10,7 +11,7 @@ import android.telephony.gsm.SmsManager;
 import android.util.Log;
 
 @SuppressWarnings("deprecation")
-public class ReplyWithLocation implements Cmd {
+public class ReplyWithLocationCmd implements Cmd {
 	private LocationManager mLocationManager;
 
 	public String getCmdName() {
