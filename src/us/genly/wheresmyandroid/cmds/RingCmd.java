@@ -1,5 +1,7 @@
 package us.genly.wheresmyandroid.cmds;
 
+import java.util.StringTokenizer;
+
 import us.genly.wheresmyandroid.Cmd;
 import us.genly.wheresmyandroid.Ring;
 import android.content.Context;
@@ -7,12 +9,22 @@ import android.content.Intent;
 import android.media.AudioManager;
 
 public class RingCmd implements Cmd {
-
+	private int ringDuration;
+	
 	public String getCmdName() {
 		return "ring";
 	}
 
-	public void execCmd(Context context, String address) {
+	public void execCmd(Context context, String address, StringTokenizer  args) {
+		ringDuration = 60;
+		if (args.hasMoreTokens()) {
+			String arg = args.nextToken();
+			try {
+				ringDuration = Integer.parseInt(arg);
+			} catch (NumberFormatException e) {
+				// Just take the default if we don't find an integer.
+			}
+		}
 		ringerOn(context);
 		volumeUp(context);
 		ring(context);
@@ -36,7 +48,7 @@ public class RingCmd implements Cmd {
 	private void ring(Context context) {
 		Intent intent = new Intent(context, Ring.class);
 		intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-		intent.putExtra("time", 50);
+		intent.putExtra("time", ringDuration);
 		context.startActivity(intent);
 	}
 }

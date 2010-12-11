@@ -1,5 +1,7 @@
 package us.genly.wheresmyandroid.cmds;
 
+import java.util.StringTokenizer;
+
 import us.genly.wheresmyandroid.Cmd;
 import android.content.Context;
 import android.location.Location;
@@ -18,7 +20,7 @@ public class ReplyWithLocationCmd implements Cmd {
 		return "location";
 	}
 	
-	public void execCmd(Context context, final String address) {
+	public void execCmd(Context context, final String address, StringTokenizer args) {
 		LocationListener locationListener = new LocationListener() {
 			public void onLocationChanged(Location location) {
 				Log.i("us.genly.wheresmyandroid", "locationListener location="

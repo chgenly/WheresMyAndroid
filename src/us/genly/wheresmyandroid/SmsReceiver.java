@@ -83,7 +83,7 @@ public class SmsReceiver extends BroadcastReceiver {
 		Cmd cmd = cmds.get(cmdName);
 		if (cmd == null)
 			cmd = cmds.get("location");
-		cmd.execCmd(context, address);
+		cmd.execCmd(context, address, st);
 	}
 	
 	private List<SmsMessage> getSmsMessages(Intent intent) {
