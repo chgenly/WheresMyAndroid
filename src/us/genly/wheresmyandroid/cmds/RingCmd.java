@@ -5,10 +5,6 @@ import us.genly.wheresmyandroid.Ring;
 import android.content.Context;
 import android.content.Intent;
 import android.media.AudioManager;
-import android.media.Ringtone;
-import android.media.RingtoneManager;
-import android.net.Uri;
-import android.provider.Settings;
 
 public class RingCmd implements Cmd {
 
@@ -40,7 +36,7 @@ public class RingCmd implements Cmd {
 	private void ring(Context context) {
 		Intent intent = new Intent(context, Ring.class);
 		intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-		intent.putExtra("time", 5);
+		intent.putExtra("time", 50);
 		context.startActivity(intent);
 	}
 }

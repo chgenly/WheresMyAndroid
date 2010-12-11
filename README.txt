@@ -34,13 +34,14 @@ your friends can't ring your phone as a prank.
   when generating a reply, saving power.  (I leave my GPS enabled
   all the time.)
 
-<keyword> ring
+<keyword> ring [duration]
 
   Takes the phone out of vibrate or silent mode, turns the ringer
-  volume to its loudest, and rings the phone.  Use this command if you
-  know you've left the phone in the house, but you just can't find it.
-  You could just call your phone, but this is better if you've left
-  it in silent or vibrate mode.
+  volume to its loudest, and rings the phone for the given number of
+  seconds.  If the duration is not specified it defaults to 60 seconds.
+  Use this command if you know you've left the phone in the house, but
+  you just can't find it.  You could just call your phone, but this is 
+  better if you've left it in silent or vibrate mode.
   
   When the phone starts ringing a view will be presented with a
   button that allows you to stop the ringing.
